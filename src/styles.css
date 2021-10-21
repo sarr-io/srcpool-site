@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    background-color: #232323;
+    overflow-y: hidden;
+}
+
+.headDiv {
+    height: 40px;
+    background-color: rgba(26, 26, 27, 0.84);
+}
+
+.logo {
+    width: 40px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.previewImg {
+    position: relative;
+    left: 0%;
+    top: 15%;
+    height: 80%;
+    width: 60%;
+}
+
+.noUnderlineText {
+    color: white;
+    text-decoration: none;
+}
+
+.docButton {
+    font-family: iosevka-light;
+    font-size: 15px;
+    position: fixed;
+    right: 0.6%;
+    margin-top: 0.6%;
+    align-content: center;
+    color: white;
+	border: none;
+    background: none;
+}
+
+div {
+    user-select: none;
+}
+
+.githubButton {
+    font-family: iosevka-light;
+    font-size: 12px;
+    position: relative;
+    align-content: center;
+    margin-top: 5px;
+    color: white;
+	border: none;
+	padding: 0;
+    background: none;
+}
+
+.infoDiv {
+    position: fixed;
+    right: 15%;
+    height: 70%;
+    top: 15%;
+    width: 20%;
+    text-align: center;
+    padding-top: 100px;
+}
+
+Img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    width: 100%;
+}
+
+.bgImg {
+    user-select: none;
+    position: fixed;
+    opacity: 84%;
+}
+
+.title {
+    color: white;
+    font-family: iosevka-regular;
+    font-size: 65px;
+    position: relative;
+    align-content: center;
+    margin-bottom: 5px;
+}
+
+.desc {
+    color: white;
+    font-family: iosevka-light;
+    font-size: 21px;
+    text-align: left;
+    left: 20%;
+    margin-left: 5%;
+}
+
+.mirrorButton {
+    color: #232324;
+    background: white;
+    border-radius: 10px;
+    position: relative;
+    width: 120px;
+    height: 40px;
+    color: inherit;
+	border: none;
+	padding: 0;
+    font-family: iosevka-regular;
+}
+
+.mirrorButton:active {
+    color: #232324;
+    background: linear-gradient(#FFFFFF, #FFFFFF, #a4eaff);
+    border-radius: 10px;
+    position: relative;
+    width: 120px;
+    height: 40px;
+    color: inherit;
+	border: none;
+	padding: 0;
+    transform: scale(95%);
+    font-family: iosevka-regular;
+}
+
+.mirrorButton:hover {
+    color: #232324;
+    background: linear-gradient(#FFFFFF, #FFFFFF, #a4eaff);
+    border-radius: 10px;
+    position: relative;
+    width: 120px;
+    height: 40px;
+    color: inherit;
+	border: none;
+	padding: 0;
+    font-family: iosevka-regular;
+}
+
+@font-face {
+    font-family: iosevka-regular;
+    src: url(fonts/iosevka-regular.ttf);
+}
+
+@font-face {
+    font-family: iosevka-light;
+    src: url(fonts/iosevka-regular.ttf);
+}
