@@ -16,9 +16,9 @@ body {
 }
 
 .previewImg {
-    position: relative;
+    position: fixed;
     left: 0%;
-    top: 15%;
+    top: 20%;
     height: 80%;
     width: 60%;
 }
