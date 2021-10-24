@@ -46,14 +46,17 @@ div {
 
 .githubButton {
     font-family: iosevka-light;
+    text-decoration: underline;
     font-size: 12px;
     position: relative;
     align-content: center;
     margin-top: 5px;
-    color: white;
+    background: #ffffff;
+    background: linear-gradient(to right, #fee9ff 0%, rgb(141, 255, 253) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 	border: none;
 	padding: 0;
-    background: none;
 }
 
 .infoDiv {
@@ -113,7 +116,7 @@ Img {
 
 .mirrorButton:active {
     color: #232324;
-    background: linear-gradient(#FFFFFF, #FFFFFF, #a4eaff);
+    background: linear-gradient(#FFFFFF, #FFFFFF, #dcc3ff);
     border-radius: 10px;
     position: relative;
     width: 120px;
@@ -127,7 +130,7 @@ Img {
 
 .mirrorButton:hover {
     color: #232324;
-    background: linear-gradient(#FFFFFF, #FFFFFF, #a4eaff);
+    background: linear-gradient(#FFFFFF, #FFFFFF, #dcc3ff);
     border-radius: 10px;
     position: relative;
     width: 120px;
