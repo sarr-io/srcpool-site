@@ -52,7 +52,7 @@ div {
     align-content: center;
     margin-top: 5px;
     background: #ffffff;
-    background: linear-gradient(to right, #fee9ff 0%, rgb(141, 255, 253) 100%);
+    background: linear-gradient(to right, rgb(189, 255, 242) 0%,  rgb(255, 255, 255) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 	border: none;
@@ -116,7 +116,7 @@ Img {
 
 .mirrorButton:active {
     color: #232324;
-    background: linear-gradient(#FFFFFF, #FFFFFF, #dcc3ff);
+    background: linear-gradient(#FFFFFF, rgb(189, 255, 242));
     border-radius: 10px;
     position: relative;
     width: 120px;
@@ -130,7 +130,7 @@ Img {
 
 .mirrorButton:hover {
     color: #232324;
-    background: linear-gradient(#FFFFFF, #FFFFFF, #dcc3ff);
+    background: linear-gradient(#FFFFFF, rgb(189, 255, 242));
     border-radius: 10px;
     position: relative;
     width: 120px;
