@@ -17,10 +17,10 @@ body {
 
 .previewImg {
     position: fixed;
-    left: 0%;
-    top: 20%;
+    left: 5%;
+    top: 18%;
     height: 80%;
-    width: 60%;
+    width: 50%;
 }
 
 .noUnderlineText {
