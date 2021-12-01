@@ -15,12 +15,21 @@ body {
     margin-top: 5px;
 }
 
-.previewImg {
+.previewDiv {
     position: fixed;
     left: 5%;
-    top: 18%;
-    height: 80%;
-    width: 50%;
+    top: 20%;
+    height: 60%;
+    width: 60%;
+}
+
+.previewImg {
+    width: 75%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 .noUnderlineText {
@@ -45,28 +54,46 @@ div {
 }
 
 .githubButton {
-    font-family: iosevka-light;
-    text-decoration: underline;
-    font-size: 12px;
+    color: #232324;
+    background: #2c2c2c;
+    background-image: url("images/source.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
     position: relative;
-    align-content: center;
-    margin-top: 5px;
-    background: #ffffff;
-    background: linear-gradient(to right, rgb(189, 255, 242) 0%,  rgb(255, 255, 255) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    width: 40px;
+    height: 40px;
 	border: none;
-	padding: 0;
+    padding: 0;
+    -webkit-transition: transform 0.1s;
+    -moz-transition: transform 0.1s;
+    -o-transition: transform 0.1s;
+    transition: transform 0.1s;
+}
+
+.githubButton:hover {
+    background: #373737;
+    background-image: url("images/source.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.githubButton:active {
+    background: #3f3f3f;
+    background-image: url("images/source.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scale(95%);
 }
 
 .infoDiv {
     position: fixed;
     right: 15%;
-    height: 70%;
-    top: 15%;
+    top: 30%;
     width: 20%;
     text-align: center;
-    padding-top: 100px;
+    align-items: center;
+    align-content: center;
 }
 
 Img {
@@ -84,17 +111,108 @@ Img {
 }
 
 .title {
-    color: white;
-    font-family: iosevka-regular;
+    position: relative;
+}
+
+.titleText {
+    font-family: iosevka-extendedlight;
     font-size: 65px;
     position: relative;
-    align-content: center;
-    margin-bottom: 5px;
+    margin: 0;
+}
+
+.titleText:nth-child(1) {
+    color: rgb(255, 255, 255);
+}
+
+@keyframes glitch{
+    2%,64%{
+        transform: translate(1px,0) skew(0deg);
+    }
+    4%,60%{
+        transform: translate(-1px,0) skew(0deg);
+    }
+    62%{
+        transform: translate(0,0) skew(5deg); 
+    }
+}
+  
+.titleText:before {
+    content: attr(title);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color:#ffffff4a;
+    z-index: -1;
+}
+.titleText:after{
+    content: attr(title);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color:rgba(255, 255, 255, 0.398);
+    z-index: -1;
+}
+  
+.titleText:before{
+    animation: glitchTop 0.5s linear infinite;
+    animation-delay: 4s;
+    clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+}
+  
+@keyframes glitchTop{
+    2%,64%{
+        transform: translate(0px,0px);
+    }
+    4%,60%{
+        transform: translate(-2px,1px);
+    }
+    62%{
+        transform: translate(-1px,-1px) skew(-5deg); 
+    }
+    80%{
+        transform: translate(4px,0px);
+    }
+}
+  
+.titleText:after{
+    animation: glitchBotom 1s linear infinite;
+    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+  
+@keyframes glitchBotom{
+    2%,64%{
+        transform: translate(0px,0);
+    }
+    4%,60%{
+        transform: translate(-2px,0);
+    }
+    62%{
+        transform: translate(1px,1px) skew(3deg); 
+    }
+    82%{
+        transform: translate(-2px,-3px) skew(-1deg); 
+    }
+}
+
+.titleText:nth-child(2) {
+    font-family: iosevka-extendedbold;
+    position: relative;
+    color: rgba(255, 255, 255, 0);
+    -webkit-text-stroke: 0.1px rgb(255, 255, 255); /* width and color */
+    transform: translateY(10px);
+    margin-top: -80px;
+    animation: glitch 4s linear infinite;
 }
 
 .desc {
     color: white;
     font-family: iosevka-light;
+    font-weight: 550;
     font-size: 21px;
     text-align: left;
     left: 20%;
@@ -103,47 +221,66 @@ Img {
 
 .mirrorButton {
     color: #232324;
-    background: white;
+    background: linear-gradient(to right, rgb(255, 186, 253), #a7fff6, rgb(255, 231, 180),rgb(255, 186, 253));
+    background-size: 400% 100%;
+    animation: Gradient 4s ease infinite;
     border-radius: 10px;
     position: relative;
     width: 120px;
     height: 40px;
     color: inherit;
-	border: none;
+	border: 20px;
+    mix-blend-mode: overlay;
 	padding: 0;
     font-family: iosevka-regular;
+    -webkit-transition: transform 0.1s;
+    -moz-transition: transform 0.1s;
+    -o-transition: transform 0.1s;
+    transition: transform 0.1s;
+}
+
+.mirrorButton::after {
+    content: '';
+    position: absolute;
+    background-size: inherit;
+    background-image: inherit;
+    animation: inherit;
+    left: 0px;
+    right: 0px;
+    top: 2px;
+    height: 100%;
+    filter: blur(2rem);
+}
+
+@keyframes Gradient {
+	50% {
+		background-position: 140% 50%;
+	}
 }
 
 .mirrorButton:active {
-    color: #232324;
-    background: linear-gradient(#FFFFFF, rgb(189, 255, 242));
-    border-radius: 10px;
-    position: relative;
-    width: 120px;
-    height: 40px;
-    color: inherit;
-	border: none;
-	padding: 0;
     transform: scale(95%);
-    font-family: iosevka-regular;
-}
-
-.mirrorButton:hover {
-    color: #232324;
-    background: linear-gradient(#FFFFFF, rgb(189, 255, 242));
-    border-radius: 10px;
-    position: relative;
-    width: 120px;
-    height: 40px;
-    color: inherit;
-	border: none;
-	padding: 0;
-    font-family: iosevka-regular;
 }
 
 @font-face {
     font-family: iosevka-regular;
     src: url(fonts/iosevka-regular.ttf);
+}
+
+@font-face {
+    font-family: iosevka-extended;
+    src: url(fonts/iosevka-extended.ttf);
+}
+
+@font-face {
+    font-family: iosevka-extendedlight;
+    src: url(fonts/iosevka-extendedlight.ttf);
+}
+
+
+@font-face {
+    font-family: iosevka-extendedbold;
+    src: url(fonts/iosevka-extendedbold.ttf);
 }
 
 @font-face {

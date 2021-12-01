@@ -18,17 +18,24 @@
     </header>
     <body>
         <img src="src/images/Screen.png" class="bgImg">
-        <div class="previewImg">
-            <img src="src/images/previewimage.png">
+        <div class="previewDiv">
+            <img src="src/images/previewimage.png" style="width:75%" class="previewImg">
         </div>
         <div class="infoDiv">
-            <h1 class="title">srcpool</h1>
+            <div class="title">
+                <h1 class="titleText" title="srcpool">srcpool</h1>
+                <h1 class="titleText">srcpool</h1>
+            </div>
+            
             <h1 class="desc">☕ Multi-platform, open source, "customizable down to the core" text/code editor.</h1>
+
             <br>
-            <button class="mirrorButton" id="mirrorButton">Download</button> <br>
-            <button class="githubButton">
-                <a class="githubButton" href="https://github.com/sarr-io/srcpool">View Source Code</a>
-            </button>
+
+            <button class="mirrorButton" id="mirrorButton">Download</button>
+
+            <button class="githubButton" id="githubButton" onclick="window.open('https://github.com/sarr-io/srcpool')">
+
+            <br>
         </div>
     </body>
 </html>
