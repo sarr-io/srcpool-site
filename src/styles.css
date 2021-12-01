@@ -4,15 +4,17 @@ body {
     overflow-y: hidden;
 }
 
+.logo {
+    width: 40px;
+    margin-left: 20px;
+    margin-top: 20px;
+    z-index: 1;
+    position: fixed;
+}
+
 .headDiv {
     height: 40px;
     background-color: rgba(26, 26, 27, 0.84);
-}
-
-.logo {
-    width: 40px;
-    margin-left: 5px;
-    margin-top: 5px;
 }
 
 .previewDiv {
@@ -21,6 +23,19 @@ body {
     top: 20%;
     height: 60%;
     width: 60%;
+    animation: float 15s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{
+        transform: translate(0,-20px) skew(1deg);
+    }
+    50%{
+        transform: translate(0, 20px) skew(-1deg);
+    }
+    100%{
+        transform: translate(0,-20px) skew(1deg);
+    }
 }
 
 .previewImg {
@@ -33,7 +48,7 @@ body {
 }
 
 .noUnderlineText {
-    color: white;
+    color: #373738;
     text-decoration: none;
 }
 
@@ -44,7 +59,7 @@ body {
     right: 0.6%;
     margin-top: 0.6%;
     align-content: center;
-    color: white;
+    color: #262627;
 	border: none;
     background: none;
 }
@@ -76,6 +91,7 @@ div {
     background-image: url("images/source.png");
     background-repeat: no-repeat;
     background-position: center;
+    transform: translate(0, -5%);
 }
 
 .githubButton:active {
@@ -123,79 +139,26 @@ Img {
 
 .titleText:nth-child(1) {
     color: rgb(255, 255, 255);
+    z-index: 1;
+    transition: all 0.5s;
+}
+
+.titleText:nth-child(1):hover {
+    transform: skewX(-5deg) translate(0, -5%);
 }
 
 @keyframes glitch{
-    2%,64%{
+    0%{
+        transform: translate(0px,0) skew(0deg);
+        opacity: 0;
+    }
+    20%{
         transform: translate(1px,0) skew(0deg);
+        opacity: 100;
     }
-    4%,60%{
-        transform: translate(-1px,0) skew(0deg);
-    }
-    62%{
-        transform: translate(0,0) skew(5deg); 
-    }
-}
-  
-.titleText:before {
-    content: attr(title);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    color:#ffffff4a;
-    z-index: -1;
-}
-.titleText:after{
-    content: attr(title);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    color:rgba(255, 255, 255, 0.398);
-    z-index: -1;
-}
-  
-.titleText:before{
-    animation: glitchTop 0.5s linear infinite;
-    animation-delay: 4s;
-    clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
-}
-  
-@keyframes glitchTop{
-    2%,64%{
-        transform: translate(0px,0px);
-    }
-    4%,60%{
-        transform: translate(-2px,1px);
-    }
-    62%{
-        transform: translate(-1px,-1px) skew(-5deg); 
-    }
-    80%{
-        transform: translate(4px,0px);
-    }
-}
-  
-.titleText:after{
-    animation: glitchBotom 1s linear infinite;
-    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-}
-  
-@keyframes glitchBotom{
-    2%,64%{
-        transform: translate(0px,0);
-    }
-    4%,60%{
-        transform: translate(-2px,0);
-    }
-    62%{
-        transform: translate(1px,1px) skew(3deg); 
-    }
-    82%{
-        transform: translate(-2px,-3px) skew(-1deg); 
+    100%{
+        transform: translate(-1px,20px) skew(10deg);
+        opacity: 0;
     }
 }
 
@@ -256,6 +219,10 @@ Img {
 	50% {
 		background-position: 140% 50%;
 	}
+}
+
+.mirrorButton:hover {
+    transform: translate(0, -5%);
 }
 
 .mirrorButton:active {
