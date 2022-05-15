@@ -23,33 +23,128 @@ body {
     top: 20%;
     height: 60%;
     width: 60%;
-    animation: float 15s ease-in-out infinite;
 }
 
 @keyframes float{
     0%{
-        transform: translate(0,-20px) skew(1deg);
+        transform: translate(0, 10px);
     }
     50%{
-        transform: translate(0, 20px) skew(-1deg);
+        transform: translate(0, 0px);
     }
     100%{
-        transform: translate(0,-20px) skew(1deg);
+        transform: translate(0, 10px);
     }
 }
 
 .previewImg {
-    width: 75%;
+    margin: 0;
+    position: absolute;
+    top: -10%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 0;
+    animation: float 20s infinite;
+}
+
+.previewImgFlower {
+    margin: 0;
+    position: absolute;
+    top: -10%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: -1;
+    animation: float 25s infinite;
+}
+
+.previewImgText {
+    margin: 0;
+    position: absolute;
+    top: -10%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    animation: float 27s infinite;
+}
+
+.themeCards {
+    z-index: 1;
     margin: 0;
     position: absolute;
     top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    width: 50%;
+    height: 25%;
+    left: 17%;
+    flex-wrap: wrap;
+}
+
+@keyframes card-float {
+    0% {
+        transform: translate(0, 0px);
+    }
+    50% {
+        transform: translate(0, -10px);
+    }
+    100% {
+        transform: translate(0, 0px);
+    }
+}
+
+.themeCard {
+    width: 26%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    float: left;
+    margin-left: 30px;
+    -webkit-transition: transform 0.2s;
+    -moz-transition: transform 0.2s;
+    -o-transition: transform 0.2s;
+    transition: transform 0.2s;
+}
+
+.themeCard:hover {
+    width: 26%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.081);
+    position: relative;
+    overflow: hidden;
+    float: left;
+    margin-left: 30px;
+    transform: scale(1.05);
+    animation: Gradient 4s ease infinite;
+}
+
+.previewCardBackground {
+    z-index: -1;
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+}
+
+.previewCardPreview {
+    z-index: 0;
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    animation: card-float 60s ease-in-out infinite;
+    animation-delay: 200ms;
+}
+
+.previewCardDetail {
+    z-index: 1;
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    animation: card-float 15s ease-in-out infinite;
 }
 
 .noUnderlineText {
     color: #373738;
     text-decoration: none;
+    z-index: 1;
 }
 
 .docButton {
@@ -105,7 +200,7 @@ div {
 .infoDiv {
     position: fixed;
     right: 15%;
-    top: 30%;
+    top: 40%;
     width: 20%;
     text-align: center;
     align-items: center;
@@ -126,60 +221,14 @@ Img {
     opacity: 84%;
 }
 
-.title {
-    position: relative;
-}
-
-.titleText {
-    font-family: iosevka-extendedlight;
-    font-size: 65px;
-    position: relative;
-    margin: 0;
-}
-
-.titleText:nth-child(1) {
-    color: rgb(255, 255, 255);
-    z-index: 1;
-    transition: all 0.5s;
-}
-
-.titleText:nth-child(1):hover {
-    transform: skewX(-5deg) translate(0, -5%);
-}
-
-@keyframes glitch{
-    0%{
-        transform: translate(0px,0) skew(0deg);
-        opacity: 0;
-    }
-    20%{
-        transform: translate(1px,0) skew(0deg);
-        opacity: 100;
-    }
-    100%{
-        transform: translate(-1px,20px) skew(10deg);
-        opacity: 0;
-    }
-}
-
-.titleText:nth-child(2) {
-    font-family: iosevka-extendedbold;
-    position: relative;
-    color: rgba(255, 255, 255, 0);
-    -webkit-text-stroke: 0.1px rgb(255, 255, 255); /* width and color */
-    transform: translateY(10px);
-    margin-top: -80px;
-    animation: glitch 4s linear infinite;
-}
-
 .desc {
     color: white;
-    font-family: iosevka-light;
+    font-family: Desc;
     font-weight: 550;
     font-size: 21px;
     text-align: left;
     left: 20%;
-    margin-left: 5%;
+    margin-left: 4%;
 }
 
 .mirrorButton {
@@ -195,7 +244,8 @@ Img {
 	border: 20px;
     mix-blend-mode: overlay;
 	padding: 0;
-    font-family: iosevka-regular;
+    font-family: Button;
+    font-weight: 1000;
     -webkit-transition: transform 0.1s;
     -moz-transition: transform 0.1s;
     -o-transition: transform 0.1s;
@@ -230,27 +280,11 @@ Img {
 }
 
 @font-face {
-    font-family: iosevka-regular;
-    src: url(fonts/iosevka-regular.ttf);
+    font-family: Button;
+    src: url(fonts/Kanit-Regular.ttf);
 }
 
 @font-face {
-    font-family: iosevka-extended;
-    src: url(fonts/iosevka-extended.ttf);
-}
-
-@font-face {
-    font-family: iosevka-extendedlight;
-    src: url(fonts/iosevka-extendedlight.ttf);
-}
-
-
-@font-face {
-    font-family: iosevka-extendedbold;
-    src: url(fonts/iosevka-extendedbold.ttf);
-}
-
-@font-face {
-    font-family: iosevka-light;
-    src: url(fonts/iosevka-light.ttf);
+    font-family: Desc;
+    src: url(fonts/Amiko-Regular.ttf);
 }
