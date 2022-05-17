@@ -1,28 +1,143 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     background-color: #232323;
-    overflow-y: hidden;
 }
 
 .logo {
     width: 40px;
     margin-left: 20px;
     margin-top: 20px;
-    z-index: 1;
-    position: fixed;
+    position: absolute;
 }
 
 .headDiv {
+    z-index: 10;
     height: 40px;
-    background-color: rgba(26, 26, 27, 0.84);
+    width: 100%;
+    position: absolute;
 }
 
 .previewDiv {
-    position: fixed;
+    position: absolute;
     left: 5%;
     top: 20%;
     height: 60%;
     width: 60%;
+}
+
+.aboutDiv {
+    z-index: 5;
+    position: absolute;
+    top: 120%;
+    height: 100%;
+    width: 100%;
+    background-color: #1c1c1d;
+}
+
+.preAboutDiv {
+    z-index: 5;
+    position: absolute;
+    top: 100%;
+    height: 20%;
+    width: 100%;
+    background: linear-gradient(to top, #1c1c1d, #23232300);
+}
+
+.aboutSegment {
+    position: relative;
+    height: 50%;
+    width: 100%;
+}
+
+.aboutSegmentTitle {
+    position: absolute;
+    top: 53%;
+    left: 22%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 30px;
+    font-family: Button;
+    font-weight: 1000;
+    text-align: left;
+}
+
+.aboutSegmentText {
+    position: absolute;
+    top: 70%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 20px;
+    font-family: Button;
+    font-weight: 300;
+    text-align: left;
+}
+
+.aboutSegmentImg {
+    position: absolute;
+    right: 10%;
+    width: 40%;
+    filter: grayscale(50%);
+    -webkit-transition: filter 0.2s;
+    -moz-transition: filter 0.2s;
+    -o-transition: filter 0.2s;
+    transition: filter 0.2s;
+}
+
+.aboutSegmentImg:hover {
+    position: absolute;
+    right: 10%;
+    width: 40%;
+    filter: grayscale(0%);
+}
+
+.footerDiv {
+    position: absolute;
+    bottom: -120%;
+    height: 15%;
+    width: 100%;
+    z-index: 11;
+    background-color: #141414;
+}
+
+.footerTitle {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 30px;
+    font-family: Button;
+    font-weight: 1000;
+    text-align: left;
+}
+
+.footerDivider {
+    position: absolute;
+    top: 50%;
+    left: 30.5%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 20px;
+    font-family: Button;
+    font-weight: 1000;
+    text-align: left;
+}
+
+.footerText {
+    position: absolute;
+    top: 51%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 17px;
+    font-family: Desc;
+    font-weight: 300;
+    text-align: left;
 }
 
 @keyframes float{
@@ -114,7 +229,6 @@ body {
     float: left;
     margin-left: 30px;
     transform: scale(1.05);
-    animation: Gradient 4s ease infinite;
 }
 
 .previewCardBackground {
@@ -125,16 +239,23 @@ body {
 }
 
 .previewCardPreview {
-    z-index: 0;
+    z-index: 1;
     min-width: 100%;
     min-height: 100%;
     position: absolute;
-    animation: card-float 60s ease-in-out infinite;
     animation-delay: 200ms;
+    -webkit-transition: transform 0.2s;
+    -moz-transition: transform 0.2s;
+    -o-transition: transform 0.2;
+    transition: transform 0.2s;
+}
+
+.previewCardPreview:hover {
+    transform: scale(1.5);
 }
 
 .previewCardDetail {
-    z-index: 1;
+    z-index: 0;
     min-width: 100%;
     min-height: 100%;
     position: absolute;
@@ -148,15 +269,78 @@ body {
 }
 
 .docButton {
-    font-family: iosevka-light;
+    position: absolute;
+    font-family: Button;
     font-size: 15px;
-    position: fixed;
-    right: 0.6%;
-    margin-top: 0.6%;
+    right: 2%;
+    top: 65%;
     align-content: center;
     color: #262627;
-	border: none;
-    background: none;
+    background: #1a1a1b;
+    border-radius: 10px;
+    border-width: 5px;
+    border-color: #1a1a1b;
+    border-style: solid;
+    -webkit-transition: transform 0.2s;
+    -moz-transition: transform 0.2s;
+    -o-transition: transform 0.2;
+    transition: transform 0.2s;
+}
+
+.docButton:hover {
+    transform: scale(1.05);
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translate(0, 1000%);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes slide-down {
+    100% {
+        transform: translate(0, 1000%);
+    }
+    0% {
+        transform: translate(0, 0);
+    }
+}
+
+.moreButton {
+    position: fixed;
+    font-family: Button;
+    font-size: 15px;
+    right: 47.5%;
+    left: 47.5%;
+    min-width: 95px;
+    min-height: 35px;
+    max-width: 95px;
+    max-height: 35px;
+    top: 93%;
+    align-content: center;
+    color: #262627;
+    background: #202020;
+    border-radius: 10px;
+    border-width: 5px;
+    border-color: #202020;
+    border-style: solid;
+    -webkit-transition: transform 0.2s;
+    -moz-transition: transform 0.2s;
+    -o-transition: transform 0.2;
+    transition: transform 0.2s;
+    animation: slide-up 1s ease;
+}
+
+.moreButton:hover {
+    transform: scale(1.05);
+}
+
+.moreButton:active {
+    transform: scale(0.95);
+    animation: slide-down 1s ease forwards;
 }
 
 div {
@@ -198,13 +382,14 @@ div {
 }
 
 .infoDiv {
-    position: fixed;
+    position: absolute;
     right: 15%;
     top: 40%;
     width: 20%;
     text-align: center;
     align-items: center;
     align-content: center;
+    z-index: 1;
 }
 
 Img {
@@ -217,8 +402,9 @@ Img {
 
 .bgImg {
     user-select: none;
-    position: fixed;
+    position: absolute;
     opacity: 84%;
+    z-index: -3;
 }
 
 .desc {
