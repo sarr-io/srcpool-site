@@ -4,7 +4,8 @@ html {
 
 body {
     margin: 0;
-    background-color: #232323;
+    background-color: #242424;
+    overflow-x: hidden;
 }
 
 .logo {
@@ -48,39 +49,45 @@ body {
 }
 
 .aboutSegment {
-    position: relative;
+    position: absolute;
     height: 50%;
-    width: 100%;
+    width: 70%;
+    left: 15%;
 }
 
 .aboutSegmentTitle {
     position: absolute;
-    top: 53%;
-    left: 22%;
+    text-align: left;
+    top: 240px;
+    left: 200px;
     transform: translate(-50%, -50%);
     color: #ffffff;
     font-size: 30px;
     font-family: Button;
     font-weight: 1000;
     text-align: left;
+    overflow: hidden;
 }
 
 .aboutSegmentText {
     position: absolute;
-    top: 70%;
-    left: 30%;
+    text-align: left;
+    top: 330px;
+    left: 350px;
     transform: translate(-50%, -50%);
     color: #ffffff;
     font-size: 20px;
     font-family: Button;
     font-weight: 300;
     text-align: left;
+    overflow: hidden;
 }
 
 .aboutSegmentImg {
     position: absolute;
-    right: 10%;
-    width: 40%;
+    right: -10%;
+    top: 0%;
+    width: 50%;
     filter: grayscale(50%);
     -webkit-transition: filter 0.2s;
     -moz-transition: filter 0.2s;
@@ -90,8 +97,9 @@ body {
 
 .aboutSegmentImg:hover {
     position: absolute;
-    right: 10%;
-    width: 40%;
+    right: -10%;
+    top: 0%;
+    width: 50%;
     filter: grayscale(0%);
 }
 
@@ -321,7 +329,7 @@ body {
     max-height: 35px;
     top: 93%;
     align-content: center;
-    color: #262627;
+    color: #373738;
     background: #202020;
     border-radius: 10px;
     border-width: 5px;
@@ -336,11 +344,6 @@ body {
 
 .moreButton:hover {
     transform: scale(1.05);
-}
-
-.moreButton:active {
-    transform: scale(0.95);
-    animation: slide-down 1s ease forwards;
 }
 
 div {
